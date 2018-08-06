@@ -17,3 +17,8 @@ variable "project_name" {
 variable "image" {
   description = "Google Compute Image to use"
 }
+
+variable "instance_type" {
+  description = "Google Compute Machine Type to use"
+  default = "f1-micro"
+}

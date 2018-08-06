@@ -6,7 +6,7 @@ provider "google" {
 
 resource "google_compute_instance" "vm" {
   name         = "hello-world-vm"
-  machine_type = "f1-micro"
+  machine_type = "${var.instance_type}"
   zone         = "${var.region_zone}"
 
   boot_disk {
