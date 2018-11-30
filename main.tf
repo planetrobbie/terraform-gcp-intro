@@ -23,4 +23,7 @@ resource "google_compute_instance" "vm" {
       // Ephemeral IP
     }
   }
+  metadata {
+    sshKeys = "${var.ssh_user}:${var.ssh_pub_key}"
+  }
 }

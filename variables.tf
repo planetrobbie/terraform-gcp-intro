@@ -24,3 +24,12 @@ variable "instance_type" {
   description = "GCP Machine Type to use"
   default = "f1-micro"
 }
+
+variable "ssh_user" {
+  description = "instance SSH user"
+  default = "sebastien"
+}
+
+variable "ssh_pub_key" {
+  description = "SSH public key to authorize"
+}
