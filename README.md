@@ -5,7 +5,6 @@ Terraform Google Cloud Hello World
 
 To use with Terraform Open Source, uncomment `credentials =` line in `main.tf`, this is not necessary when using Terraform Enterprise.
 
- and set the `account_file_path` variable to the GCP credentials on disk.
 You also have to update in `terraform.tfvars` the values for
 
 - region
