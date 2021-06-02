@@ -1,18 +1,17 @@
 provider "google" {
-  region      = "${var.region}"
-  project     = "${var.project_name}"
-#  credentials = "${file(var.account_file_path)}"
+  region      = var.region
+  project     = var.project_name
 }
 
 resource "google_compute_instance" "vm" {
   name         = "hello-world-vm"
-  machine_type = "${var.instance_type}"
-  zone         = "${var.region_zone}"
+  machine_type = var.instance_type
+  zone         = var.region_zone
   allow_stopping_for_update = true
 
   boot_disk {
     initialize_params {
-      image = "${var.image}"
+      image = var.image
     }
   }
 
@@ -23,7 +22,7 @@ resource "google_compute_instance" "vm" {
       // Ephemeral IP
     }
   }
-  metadata {
-    sshKeys = "${var.ssh_user}:${var.ssh_pub_key}"
+  metadata = {
+    sshKeys = "var.ssh_user:var.ssh_pub_key"
   }
 }
