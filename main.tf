@@ -27,6 +27,6 @@ resource "google_compute_instance" "vm" {
   }
   labels = {
     env   = "prod"
-    owner = "seb braun"
+    owner = "seb_braun"
   }
 }
