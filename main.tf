@@ -1,12 +1,12 @@
 provider "google" {
-  region      = var.region
-  project     = var.project_name
+  region  = var.region
+  project = var.project_name
 }
 
 resource "google_compute_instance" "vm" {
-  name         = "hello-world-vm"
-  machine_type = var.instance_type
-  zone         = var.region_zone
+  name                      = "hello-world-vm"
+  machine_type              = var.instance_type
+  zone                      = var.region_zone
   allow_stopping_for_update = true
 
   boot_disk {
@@ -24,5 +24,9 @@ resource "google_compute_instance" "vm" {
   }
   metadata = {
     sshKeys = "var.ssh_user:var.ssh_pub_key"
+  }
+  tags = {
+    env   = "prod"
+    owner = "seb braun"
   }
 }
