@@ -3,7 +3,7 @@ Terraform Google Cloud Hello World
 - Deploy a VM Instance on Google Cloud
 - Output Instance IP Address.
 
-To use with Terraform Open Source, uncomment `credentials =` line in `main.tf`, this is not necessary when using Terraform Enterprise.
+To use with Terraform Open Source, uncomment `credentials =` line in `main.tf`, this is not necessary when using Terraform Enterprise. Uncomment and set variables in `terraform.tfvars`.
 
 You also have to update in `terraform.tfvars` the values for
 
